@@ -1,4 +1,4 @@
-package com.sahar.mofkrty;
+package com.sahar.mofkrty.Screens.HomeScreen;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.sahar.mofkrty.R;
+import com.sahar.mofkrty.Screens.MainScreen.MainActivity;
+import com.sahar.mofkrty.Screens.OptionsScreen.OptionsPage;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
 

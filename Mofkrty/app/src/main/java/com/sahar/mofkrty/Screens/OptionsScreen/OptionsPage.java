@@ -1,4 +1,4 @@
-package com.sahar.mofkrty;
+package com.sahar.mofkrty.Screens.OptionsScreen;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,14 +9,16 @@ import android.content.Intent;
         import android.widget.TextView;
         import android.widget.Toast;
 
+import com.sahar.mofkrty.Model.Database.DatabaseAdapter;
+import com.sahar.mofkrty.R;
+import com.sahar.mofkrty.Screens.MainScreen.MainActivity;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 public class OptionsPage extends AppCompatActivity implements View.OnClickListener{
 
