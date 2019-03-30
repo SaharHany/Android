@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Countries</string>
+    <string name="countryIndxTV">Country Index : </string>
+    <string name="popTV">Population : </string>
+    <string name="countryNameTV">Country Name : </string>
+
+    <string name="nextBtn">Next</string>
+    <string name="prevBtn">Previous</string>
+
+</resources>
