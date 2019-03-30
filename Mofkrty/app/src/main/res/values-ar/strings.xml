@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">مفكرتي</string>
+
+    <string name="titleTV"> العنوان :</string>
+    <string name="bodyTV">النص :</string>
+
+    <string name="titleTextHint">عنوان النص</string>
+    <string name="bodyTextHint">ادخل النص هنا...</string>
+
+    <string name="nextBtn">التالي</string>
+    <string name="closeBtn">إغلاق</string>
+
+
+    <string name="stfBtn">حفظ في ملف</string>
+    <string name="lffBtn">تحميل من ملف</string>
+    <string name="stsBtn">SQLite حفظ في</string>
+    <string name="lfsBtn">SQLite تحميل من</string>
+
+    <string name="signinBtn">دخول</string>
+    <string name="regBtn">تسجيل</string>
+
+    <string name="usernameTV">اسم المستخدم :</string>
+    <string name="passwordTV">كلمة المرور :</string>
+
+    <string name="usernameTextHint">ادخل اسم المستخدم هنا...</string>
+    <string name="passwordTextHint">ادخل كلمة المرور هنا...</string>
+
+    <string name="rememberCheck">تذكرني ؟</string>
+
+
+</resources>

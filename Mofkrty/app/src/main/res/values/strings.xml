@@ -1,0 +1,28 @@
+<resources>    <string name="app_name">Mofkrty</string>
+    <string name="titleTV">Title :</string>
+    <string name="bodyTV">Body :</string>
+
+    <string name="titleTextHint">Title</string>
+    <string name="bodyTextHint">Enter your text Here...</string>
+
+    <string name="nextBtn">Next</string>
+    <string name="closeBtn">Close</string>
+
+    <string name="stfBtn">Save to File</string>
+    <string name="lffBtn">Load From File</string>
+    <string name="stsBtn">Save to SQLite</string>
+    <string name="lfsBtn">Load From SQLite</string>
+
+    <string name="signinBtn">Signin</string>
+    <string name="regBtn">Register</string>
+
+
+    <string name="usernameTV">UserName :</string>
+    <string name="passwordTV">Password :</string>
+
+    <string name="usernameTextHint">Enter your Name Here...</string>
+    <string name="passwordTextHint">Enter your Password Here...</string>
+
+    <string name="rememberCheck">Remember me ?</string>
+
+</resources>
