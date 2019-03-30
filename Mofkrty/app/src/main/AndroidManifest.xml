@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OptionsPage"></activity>
-        <activity android:name=".Home" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Screens.OptionsScreen.OptionsPage"></activity>
+        <activity android:name=".Screens.HomeScreen.Home" />
+        <activity android:name=".Screens.MainScreen.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
