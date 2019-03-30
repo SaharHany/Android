@@ -18,14 +18,14 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener , MainContract.MainView {
 
-    private static String fileName = "Note.txt";
-    public static FileOutputStream outputStream = null;
+   // private static String fileName = "Note.txt";
+    //public static FileOutputStream outputStream = null;
 
-    public static final String PREFS_NAME = "UserReg";
+//    public static final String PREFS_NAME = "UserReg";
     String usernameLoggedIn = "";
-    SharedPreferences sharedPref ;
+  //  SharedPreferences sharedPref ;
 
     EditText usernameText = null;
     String usernameTextCont ="";
@@ -33,10 +33,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText passwordText = null;
     String passwordTextCont  = "";
 
+    MainContract.MainPresenter presenter ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.presenter = new MainPresenterImpl(this);
+
+  /*
         sharedPref = getSharedPreferences(PREFS_NAME , MODE_PRIVATE);
         if(!sharedPref.contains("loggedIn"))
         {
@@ -44,7 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editor.putString("loggedIn","False");
             editor.commit();
         }
-        String logged = sharedPref.getString("loggedIn","False");
+*/
+      //  String logged = sharedPref.getString("loggedIn","False");
+
+        String logged = this.presenter.getLoggedInValue();
         if(!logged.equals("False"))
         {
             usernameLoggedIn = logged ;
@@ -78,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case  R.id.regBtn: {
 
-                boolean checkReg = regUser(usernameTextCont,passwordTextCont);
+                boolean checkReg = this.presenter.regUser(usernameTextCont,passwordTextCont);
                 if(checkReg==true)
                 {
                     usernameText.setText("");
@@ -95,14 +103,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.signinBtn: {
 
-                boolean checkLogin = checkUser(usernameTextCont,passwordTextCont);
+                boolean checkLogin = this.presenter.checkUser(usernameTextCont,passwordTextCont);
                 if(checkLogin==true)
                 {
-                    SharedPreferences.Editor editor = sharedPref.edit();
+/*                    SharedPreferences.Editor editor = sharedPref.edit();
                     editor.remove("loggedIn");
                     editor.putString("loggedIn",usernameTextCont);
                     editor.commit();
-
+*/
+                    this.presenter.setLoggedInUser(usernameTextCont);
                     usernameLoggedIn = usernameTextCont ;
 
                     Toast.makeText(this, usernameTextCont, Toast.LENGTH_SHORT).show();
@@ -123,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /*
     private boolean regUser(String username,String password)
     {
         System.out.println(username + " ... "+ password+"  regUser");
@@ -174,4 +184,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    */
+    @Override
+    public String getUsername() {
+        return usernameTextCont;
+    }
+
+    @Override
+    public String getPassword() {
+        return passwordTextCont;
+    }
 }
