@@ -13,6 +13,7 @@ import com.sahar.mofkrty.Model.Database.DatabaseAdapter;
 import com.sahar.mofkrty.R;
 import com.sahar.mofkrty.Screens.MainScreen.MainActivity;
 import com.sahar.mofkrty.Screens.MainScreen.MainPresenterImpl;
+import com.sahar.mofkrty.Screens.Presenter;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -21,20 +22,20 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class OptionsPage extends AppCompatActivity implements View.OnClickListener{
+public class OptionsPage extends AppCompatActivity implements View.OnClickListener , OptionsContract.OptionsView {
 
-    private static String fileName = "Note.txt";
+  //  private static String fileName = "Note.txt";
     String username = "";
     String titleTextCont = "";
     String bodyTextCont  = "";
-    DatabaseAdapter dbAdapter = null;
-
+//    DatabaseAdapter dbAdapter = null;
+    OptionsContract.OptionsPresenter presenter ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.optionspage);
-
-        dbAdapter = new DatabaseAdapter(this);
+        this.presenter = new OptionsPresenterImpl(this);
+      //  dbAdapter = new DatabaseAdapter(this);
         Intent intent = getIntent();
         username = intent.getStringExtra("Name");
 
@@ -109,7 +110,7 @@ public class OptionsPage extends AppCompatActivity implements View.OnClickListen
 
         switch (v.getId()) {
             case  R.id.stfBtn: {
-                boolean check = saveToFile(username,titleTextCont ,bodyTextCont);
+                boolean check = this.presenter.saveToFile(username,titleTextCont ,bodyTextCont);
                 if(check)
                 {
                     Toast.makeText(this, "Note Saved Successfully", Toast.LENGTH_SHORT).show();
@@ -121,7 +122,7 @@ public class OptionsPage extends AppCompatActivity implements View.OnClickListen
             }
 
             case  R.id.lffBtn: {
-                String body = loadFromFile(username,titleTextCont);
+                String body = this.presenter.loadFromFile(username,titleTextCont);
                 Toast.makeText(this,"Note doesn't exist", Toast.LENGTH_SHORT);
 
                 if(!body.equals("notexist"))
@@ -140,7 +141,9 @@ public class OptionsPage extends AppCompatActivity implements View.OnClickListen
             }
 
             case  R.id.stsBtn: {
-                boolean check = dbAdapter.insertNote(username,titleTextCont,bodyTextCont);
+//                boolean check = dbAdapter.insertNote(username,titleTextCont,bodyTextCont);
+                boolean check = this.presenter.insertNote(username,titleTextCont,bodyTextCont);
+
                 if(check)
                 {
                     Toast.makeText(this,"Note is saved successfully", Toast.LENGTH_SHORT);
@@ -152,7 +155,9 @@ public class OptionsPage extends AppCompatActivity implements View.OnClickListen
             }
 
             case  R.id.lfsBtn: {
-                String body = dbAdapter.QueryNote(username,titleTextCont);
+//                String body = dbAdapter.QueryNote(username,titleTextCont);
+                String body = this.presenter.QueryNote(username,titleTextCont);
+
                 if(body!=null) {
                     TextView bodyTV = findViewById(R.id.bodyText);
                     bodyTV.setText(body);
@@ -171,9 +176,9 @@ public class OptionsPage extends AppCompatActivity implements View.OnClickListen
     }
 
 
-    private boolean saveToFile(String username , String title , String body)
-    {
-        String row = username + "," + title + "," + body;
+
+   // private boolean saveToFile(String username , String title , String body) {
+    /*    String row = username + "," + title + "," + body;
 
         boolean check = false;
 
@@ -199,12 +204,11 @@ public class OptionsPage extends AppCompatActivity implements View.OnClickListen
             return false ;
         }
 
-    }
+    }*/
 
-    private String loadFromFile(String username , String title)
-    {
+//    private String loadFromFile(String username , String title) {
 
-        String row = username + "," + title;
+  /*///      String row = username + "," + title;
         System.out.println(row);
         String body = "notexist" ;
         boolean check = false;
@@ -220,8 +224,8 @@ public class OptionsPage extends AppCompatActivity implements View.OnClickListen
             /*data = dataInputStream.readUTF();
             if (data.contains(row))
                 check = true;
-*/
-            while ((!check) && (dataInputStream.available() > 0)) {
+*/////
+    /*        while ((!check) && (dataInputStream.available() > 0)) {
                 System.out.println("while...");
 
                 data = dataInputStream.readUTF();
@@ -253,9 +257,11 @@ public class OptionsPage extends AppCompatActivity implements View.OnClickListen
             return body ;
         }
     }
-
+*/
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////
 /*
     private boolean saveToFile(String username , String title , String body) {
         String row = username + "," + title + "," + body;

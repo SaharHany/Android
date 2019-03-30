@@ -8,5 +8,12 @@ public interface OptionsContract {
     }
     interface OptionsPresenter extends Presenter {
 
+        public boolean saveToFile(String username, String title, String body);
+
+        public String loadFromFile(String username, String title);
+
+        public boolean insertNote(String username, String title, String body);
+
+        public String QueryNote(String username, String title);
     }
 }
