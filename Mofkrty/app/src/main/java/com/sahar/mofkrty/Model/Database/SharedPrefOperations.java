@@ -7,4 +7,6 @@ public interface SharedPrefOperations {
     public void setLoggedInUser(String username);
 
     public String getLoggedInValue();
+
+    public void signOut();
 }

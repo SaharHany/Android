@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import com.sahar.mofkrty.Screens.MainScreen.MainContract;
 import com.sahar.mofkrty.Screens.MainScreen.MainPresenterImpl;
+import com.sahar.mofkrty.Screens.Presenter;
 
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
@@ -14,7 +15,7 @@ import java.io.IOException;
 import static android.content.Context.MODE_PRIVATE;
 
 public class SharedPrefOperImpl implements SharedPrefOperations {
-    MainContract.MainPresenter presenter ;
+    Presenter presenter ;
 
     private static String fileName = "Note.txt";
     public static FileOutputStream outputStream = null;
@@ -22,7 +23,7 @@ public class SharedPrefOperImpl implements SharedPrefOperations {
     public static final String PREFS_NAME = "UserReg";
     SharedPreferences sharedPref ;
 
-    public SharedPrefOperImpl(MainContract.MainPresenter presenter) {
+    public SharedPrefOperImpl(Presenter presenter) {
         this.presenter = presenter ;
 
         Context context = this.presenter.getContext();
@@ -86,6 +87,16 @@ public class SharedPrefOperImpl implements SharedPrefOperations {
     @Override
     public String getLoggedInValue() {
         return sharedPref.getString("loggedIn","False");
+    }
+
+    @Override
+    public void signOut() {
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.remove("loggedIn");
+        editor.putString("loggedIn","False");
+        editor.commit();
+
     }
 
     @Override

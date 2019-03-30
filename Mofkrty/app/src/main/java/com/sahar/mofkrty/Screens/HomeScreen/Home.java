@@ -1,7 +1,7 @@
 package com.sahar.mofkrty.Screens.HomeScreen;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
+//import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,20 +13,22 @@ import com.sahar.mofkrty.R;
 import com.sahar.mofkrty.Screens.MainScreen.MainActivity;
 import com.sahar.mofkrty.Screens.OptionsScreen.OptionsPage;
 
-public class Home extends AppCompatActivity implements View.OnClickListener {
+public class Home extends AppCompatActivity implements View.OnClickListener ,HomeContract.HomeView{
 
     public String titleTextCont = "";
     public String bodyTextCont = "";
     String username = "";
-    SharedPreferences sharedPref ;
-    public static final String PREFS_NAME = "UserReg";
+    //SharedPreferences sharedPref ;
+  //  public static final String PREFS_NAME = "UserReg";
 
+    HomeContract.HomePresenter presenter ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+        presenter = new HomePresenterImpl(this);
 
-        sharedPref = getSharedPreferences(PREFS_NAME , MODE_PRIVATE);
+//        sharedPref = getSharedPreferences(PREFS_NAME , MODE_PRIVATE);
 
         Button nextBtn = (Button) findViewById(R.id.nextBtn);
         nextBtn.setOnClickListener(this);
@@ -68,10 +70,12 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             }
 
             case R.id.closeBtn: {
+           /*
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.remove("loggedIn");
                 editor.putString("loggedIn","False");
-                editor.commit();
+                editor.commit();*/
+                this.presenter.signOut();
                 finish();
                 break;
             }
