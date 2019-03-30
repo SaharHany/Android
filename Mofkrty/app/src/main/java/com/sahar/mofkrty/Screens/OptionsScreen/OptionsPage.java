@@ -12,6 +12,7 @@ import android.content.Intent;
 import com.sahar.mofkrty.Model.Database.DatabaseAdapter;
 import com.sahar.mofkrty.R;
 import com.sahar.mofkrty.Screens.MainScreen.MainActivity;
+import com.sahar.mofkrty.Screens.MainScreen.MainPresenterImpl;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -176,7 +177,7 @@ public class OptionsPage extends AppCompatActivity implements View.OnClickListen
 
         boolean check = false;
 
-        FileOutputStream outputStream = MainActivity.outputStream;
+        FileOutputStream outputStream = null;
         DataOutputStream dataOutputStream = null;
 
         try {

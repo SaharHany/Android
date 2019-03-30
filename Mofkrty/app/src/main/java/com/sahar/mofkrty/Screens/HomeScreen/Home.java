@@ -19,14 +19,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     public String bodyTextCont = "";
     String username = "";
     SharedPreferences sharedPref ;
-
+    public static final String PREFS_NAME = "UserReg";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        sharedPref = getSharedPreferences(MainActivity.PREFS_NAME , MODE_PRIVATE);
+        sharedPref = getSharedPreferences(PREFS_NAME , MODE_PRIVATE);
 
         Button nextBtn = (Button) findViewById(R.id.nextBtn);
         nextBtn.setOnClickListener(this);
