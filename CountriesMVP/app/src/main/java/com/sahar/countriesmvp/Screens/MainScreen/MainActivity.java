@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.sahar.countriesmvp.Model.Country;
 import com.sahar.countriesmvp.R;
 
 public class MainActivity extends AppCompatActivity implements MainContract.MainView , View.OnClickListener {
@@ -80,6 +81,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
     {
         TextView pop = findViewById(R.id.popText);
         pop.setText(countryPop);
+    }
+
+    @Override
+    public void displayFirstCountry(Country country) {
+      /*  MainActivity.this.runOnUiThread(()->{
+
+        });*/
     }
 
 
