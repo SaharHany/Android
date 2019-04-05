@@ -14,5 +14,18 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="linearlayoutStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14pt</item>
+    </style>
+
+    <style name="rellayoutStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:textSize">12pt</item>
+    </style>
+
 
 </resources>
