@@ -4,6 +4,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 
 import com.sahar.swipelesstabsapp.R;
 
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         ViewAdapter adapter = new ViewAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
+
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
             @Override
