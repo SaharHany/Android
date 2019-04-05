@@ -1,4 +1,4 @@
-package com.sahar.swipetabsapp;
+package com.sahar.swipelesstabsapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -1,3 +1,57 @@
 <resources>
     <string name="app_name">SwipeTabsApp</string>
+    <string name="tab1">Calculator</string>
+    <string name="tab2">Numbers</string>
+    <string name="tab3">Shapes</string>
+
+    <string name="num">Number</string>
+    <string name="en">English</string>
+    <string name="fr">French</string>
+
+
+    <string name="num1">1</string>
+    <string name="num2">2</string>
+    <string name="num3">3</string>
+    <string name="num4">4</string>
+    <string name="num5">5</string>
+    <string name="num6">6</string>
+    <string name="num7">7</string>
+    <string name="num8">8</string>
+    <string name="num9">9</string>
+
+    <string name="num1en">One</string>
+    <string name="num2en">Two</string>
+    <string name="num3en">Three</string>
+    <string name="num4en">Four</string>
+    <string name="num5en">Five</string>
+    <string name="num6en">Six</string>
+    <string name="num7en">Seven</string>
+    <string name="num8en">Eight</string>
+    <string name="num9en">Nine</string>
+
+
+    <string name="num1fr">Un</string>
+    <string name="num2fr">Deux</string>
+    <string name="num3fr">Trois</string>
+    <string name="num4fr">Quatre</string>
+    <string name="num5fr">Cinq</string>
+    <string name="num6fr">Six</string>
+    <string name="num7fr">Sept</string>
+    <string name="num8fr">Huit</string>
+    <string name="num9fr">Neuf</string>
+
+
+    <string name="calcTV">Calculator...</string>
+    <string name="oper1">X</string>
+    <string name="oper2">Y</string>
+    <string name="operator">+</string>
+    <string name="eq">=</string>
+    <string name="operatorList">{+,-,*,/}</string>
+    <string name="res">Z</string>
+    <string name="calcBtn">Calculate</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
