@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LayoutsApp</string>
+
+    <string name="frameBtn">Frame</string>
+    <string name="linearBtn">Linear</string>
+    <string name="consBtn">Constraint</string>
+    <string name="gridBtn">Grid</string>
+    <string name="relBtn">Relative</string>
 </resources>
