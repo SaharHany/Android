@@ -19,8 +19,11 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager viewPager = findViewById(R.id.viewPager);
 
+        viewPager.beginFakeDrag();
         ViewAdapter adapter = new ViewAdapter(getSupportFragmentManager());
+
         viewPager.setAdapter(adapter);
+
 
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
