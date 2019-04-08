@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RegisterationFormApp</string>
+    <string name="usernameET">UserName</string>
+    <string name="passwordET">Password</string>
+    <string name="title">Sign Up</string>
+    <string name="femaleRB">Female</string>
+    <string name="maleRB">Male</string>
+
+
+    <string name="enterCB">Entertainment</string>
+    <string name="literatureCB">Literature</string>
+    <string name="scifiCB">Sci-Fi</string>
+    <string name="historyCB">History</string>
+
+</resources>
