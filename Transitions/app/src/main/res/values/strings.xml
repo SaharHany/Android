@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Transitions</string>
+
+    <string name="showBtn">Show</string>
+    <string name="nameTV">UserName :</string>
+    <string name="nameET">Enter Your Name Here ..</string>
+
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/rellayoutStyle"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/nameTV"
+            android:layout_width="206dp"
+            android:layout_height="33dp"
+            android:layout_below="@+id/nameET"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="63dp"
+            android:text="@string/nameTV" />
+
+        <EditText
+            android:id="@+id/nameET"
+            android:layout_width="401dp"
+            android:layout_height="60dp"
+            android:layout_above="@+id/showBtn"
+            android:layout_alignParentTop="false"
+            android:layout_marginTop="176dp"
+            android:layout_marginBottom="181dp"
+            android:ems="10"
+            android:hint="@string/nameET"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/showBtn"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:theme="@style/BtnStyleMainAct"
+            android:layout_alignParentBottom="true"
+            android:text="@string/showBtn" />
+
+    </RelativeLayout>

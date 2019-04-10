@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NavDrawer App</string>
+
+    <string name="calc">Calculator</string>
+    <string name="num">Numbers List</string>
+    <string name="menu">Menu</string>
+
+
+
+</resources>
